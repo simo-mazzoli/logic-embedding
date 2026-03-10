@@ -39,7 +39,7 @@ When running the code on GPT-2, the output visually demonstrates how embedding p
 | **Associative Trap** | `dog` $\rightarrow$ `mammal` | Moderate ($\approx 0.32$) | Neutral ($\approx 1.2$) | The semantic gravity between concepts causes the model to largely ignore the "not" token. |
 | **Reversal Paradox** | `eagle` $\rightarrow$ `bird` | High ($\approx 0.33$) | Inverted ($< 0.5$) | The model predicts the target category *more strongly* when explicitly told not to. |
 
-*(Insert your generated plot image here: `![Results Plot](https://github.com/simo-mazzoli/logic-embedding/blob/dae7cf9b1ac0f579d9555b03b96e5a41cd018e83/code.py)`)*
+*(Insert your generated plot image here: `![Results Plot](https://github.com/simo-mazzoli/logic-embedding/blob/b7a6272bc787417c8883a3706aa1a49d0097390d/download%20(4).png)*
 
 ## Conclusion
 
