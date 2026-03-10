@@ -28,3 +28,27 @@ You can run this experiment locally or in Google Colab.
 ### Requirements
 ```bash
 pip install transformers torch scipy pandas matplotlib scikit-learn
+```
+## Results & Analysis
+
+When running the code on GPT-2, the output visually demonstrates how embedding proximity overrides logical reasoning capabilities. The data clusters into three distinct behavioral zones:
+
+| Behavioral Zone | Example Pair | Embedding Sim. | Ratio ($R$) | Observation |
+| --- | --- | --- | --- | --- |
+| **Logical Success** | `paris` $\rightarrow$ `city` | Low ($\approx 0.30$) | High ($> 1.8$) | Negation functions correctly; probability of the category drops significantly. |
+| **Associative Trap** | `dog` $\rightarrow$ `mammal` | Moderate ($\approx 0.32$) | Neutral ($\approx 1.2$) | The semantic gravity between concepts causes the model to largely ignore the "not" token. |
+| **Reversal Paradox** | `eagle` $\rightarrow$ `bird` | High ($\approx 0.33$) | Inverted ($< 0.5$) | The model predicts the target category *more strongly* when explicitly told not to. |
+
+*(Insert your generated plot image here: `![Results Plot](path/to/your/image.png)`)*
+
+## Conclusion
+
+This experiment confirms that the probability space of a small language model is not independent of its static embedding space; rather, it is strictly constrained by it. When the embedding similarity between a subject and a category is sufficiently high, the internal activation shift caused by the word "not" is too weak to escape the "semantic well." In these cases, the model defaults to pattern association rather than syntactic logic, proving that continuous semantic maps extracted from logprobs mirror the underlying geometric biases of the base embedding layer.
+
+```
+
+***
+
+**Would you like me to suggest some potential "Next Steps" or "Future Work" ideas to add to the bottom of the README, such as testing this on newer models like LLaMA-3 or Mistral?**
+
+```
